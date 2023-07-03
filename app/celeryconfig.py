@@ -10,5 +10,4 @@ CELERY_BROKER_TRANSPORT_OPTIONS = {
 }
 
 broker_url="sqs://"
-result_backend = 'rpc://'
 enable_utc = True
