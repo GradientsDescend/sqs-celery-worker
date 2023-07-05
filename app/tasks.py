@@ -87,7 +87,7 @@ def upload(input, url):
     session = boto3.Session()
     s3 = session.client("s3")
 
-    s3.put_object(Body=data_string, Bucket='brewxml/data', Key="{}.xml".format(url))
+    s3.put_object(Body=data_string, Bucket='brewxml', Key="data/{}.xml".format(url))
 
 def assertXML(data, url):
     try:
