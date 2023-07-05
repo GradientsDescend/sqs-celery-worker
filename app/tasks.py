@@ -84,7 +84,7 @@ def cleanXML(data, url):
 
 def upload(input, url):
     data_string = str(input)
-    session = boto3.Session(profile_name = 'default')
+    session = boto3.Session()
     s3 = session.client("s3")
 
     s3.put_object(Body=data_string, Bucket='brewxml/data', Key="{}.xml".format(url))
