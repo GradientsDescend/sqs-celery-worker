@@ -2,7 +2,7 @@ version: '2.0'
 services:
   worker:
     image: python:3.10-alpine
-    command: ash -c "apk add --no-cache build-base libcurl curl-dev; pip3 install -r requirements.txt; celery -A tasks worker --loglevel=info"
+    command: ash -c "apk add --no-cache build-base libcurl curl-dev; pip3 install -r requirements.txt; celery -A tasks worker --loglevel=info --logfile=celerylog.log"
     volumes:
       - "./app:/app"
     working_dir: /app
