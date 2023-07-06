@@ -41,7 +41,7 @@ class ResilientSession(Session):
                     time.sleep(delay)
                     continue
                 else:
-                    logging.error("Got connection error on [%s], retry #%s in %ss" % (url, counter, delay))
+                    logging.error("Got connection error on [%s], not retrying" % (url))
                     raise err
             return r
 
